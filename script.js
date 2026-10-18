@@ -24,6 +24,9 @@ nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', close
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeMenu();
 });
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 720 && nav.classList.contains('open')) closeMenu();
+});
 
 const revealElements = document.querySelectorAll('.reveal');
 if (reducedMotion || !('IntersectionObserver' in window)) {

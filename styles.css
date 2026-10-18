@@ -34,3 +34,21 @@
 .preview-am{background:radial-gradient(circle at 72% 25%,rgba(201,255,72,.42),transparent 30%),linear-gradient(145deg,#0b2e27,#1d5548)}
 .preview-pit{background:radial-gradient(circle at 18% 18%,rgba(217,70,239,.36),transparent 30%),radial-gradient(circle at 80% 70%,rgba(139,92,246,.45),transparent 38%),linear-gradient(145deg,#0a0811,#251548)}
 .preview-booking{background:radial-gradient(circle at 72% 28%,rgba(255,211,232,.32),transparent 28%),linear-gradient(145deg,#4c2941,#a65f86)}
+
+/* Stable mobile navigation icon and full-screen menu */
+@media(max-width:720px){
+  .site-header{isolation:isolate}
+  body.menu-open .site-header{background:#0d0f0e;border-color:var(--line);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .brand{position:relative;z-index:103}
+  .menu-toggle{position:relative;z-index:103;display:block;flex:0 0 44px;width:44px;height:44px;padding:0;border:1px solid transparent;border-radius:50%;background:transparent;color:#fff;cursor:pointer;transition:background .25s,border-color .25s}
+  .menu-toggle>span:not(.sr-only){position:absolute;left:10px;width:22px;height:2px;margin:0;border-radius:999px;background:currentColor;transform-origin:center;transition:top .3s var(--ease),transform .3s var(--ease),opacity .2s}
+  .menu-toggle>span:first-child{top:13px}
+  .menu-toggle>span:nth-child(2){top:20px}
+  .menu-toggle>span:nth-child(3){top:27px}
+  .menu-toggle[aria-expanded=true]{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+  .menu-toggle[aria-expanded=true]>span:first-child{top:20px;transform:rotate(45deg)}
+  .menu-toggle[aria-expanded=true]>span:nth-child(2){opacity:0;transform:scaleX(.35)}
+  .menu-toggle[aria-expanded=true]>span:nth-child(3){top:20px;transform:rotate(-45deg)}
+  .nav{z-index:102;height:100vh;height:100dvh;visibility:hidden;opacity:0;pointer-events:none;transform:translate3d(100%,0,0);transition:transform .45s var(--ease),opacity .25s,visibility 0s linear .45s}
+  .nav.open{visibility:visible;opacity:1;pointer-events:auto;transform:translate3d(0,0,0);transition-delay:0s}
+}
