@@ -52,4 +52,23 @@ if (tiltCard && !reducedMotion && window.matchMedia('(pointer: fine)').matches) 
   });
 }
 
+document.querySelectorAll('.project-card').forEach((card) => {
+  const preview = card.querySelector('.project-preview');
+  const destination = card.querySelector('.circle-link');
+  const title = card.querySelector('h3')?.textContent?.trim();
+  if (!preview || !destination) return;
+
+  preview.setAttribute('role', 'link');
+  preview.setAttribute('tabindex', '0');
+  preview.setAttribute('aria-label', `Deschide proiectul ${title || ''}`.trim());
+
+  const openProject = () => window.open(destination.href, '_blank', 'noopener,noreferrer');
+  preview.addEventListener('click', openProject);
+  preview.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    openProject();
+  });
+});
+
 document.querySelector('[data-year]').textContent = new Date().getFullYear();

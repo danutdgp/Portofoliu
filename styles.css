@@ -24,7 +24,13 @@
 .preview-restaurant{background:radial-gradient(circle at 50% 56%,rgba(236,174,84,.3),transparent 35%),linear-gradient(145deg,#26170f,#523221)}
 .preview-jewelry{background:radial-gradient(circle at 50% 48%,rgba(245,213,138,.3),transparent 35%),linear-gradient(145deg,#17120d,#4a3825)}
 .preview-jewelry .preview-content strong span{color:#f1cf83}
-.preview-game{background:radial-gradient(circle at 25% 32%,rgba(46,237,202,.28),transparent 30%),linear-gradient(145deg,#101527,#282065)}
-.preview-fight{background:radial-gradient(circle at 72% 30%,rgba(255,69,69,.35),transparent 30%),linear-gradient(145deg,#161616,#431919)}
-.preview-fight .preview-content strong span{color:#ff6565}
 .project-status{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 14px;border:1px solid rgba(13,15,14,.2);border-radius:100px;color:#6e746f;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+
+.project-preview{isolation:isolate;cursor:pointer;background-color:#171c19}
+.project-preview::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.08),transparent 34%,rgba(0,0,0,.16));opacity:.9}
+.project-preview[role="link"]:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.project-preview[role="link"]:hover .preview-content strong{transform:translateY(-3px)}
+.preview-content strong{transition:transform .35s var(--ease)}
+.preview-am{background:radial-gradient(circle at 72% 25%,rgba(201,255,72,.42),transparent 30%),linear-gradient(145deg,#0b2e27,#1d5548)}
+.preview-pit{background:radial-gradient(circle at 18% 18%,rgba(217,70,239,.36),transparent 30%),radial-gradient(circle at 80% 70%,rgba(139,92,246,.45),transparent 38%),linear-gradient(145deg,#0a0811,#251548)}
+.preview-booking{background:radial-gradient(circle at 72% 28%,rgba(255,211,232,.32),transparent 28%),linear-gradient(145deg,#4c2941,#a65f86)}
