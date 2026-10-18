@@ -6,7 +6,7 @@ Portofoliu personal și CV online, construit cu HTML, CSS și JavaScript.
 
 - prezentare profesională;
 - competențe și tehnologii;
-- arhivă cu 15 proiecte și repository-urile aferente;
+- arhivă cu 13 proiecte și linkurile live aferente;
 - experiență și educație;
 - date de contact și CV descărcabil.
 
